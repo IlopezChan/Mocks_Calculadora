@@ -1,0 +1,42 @@
+{
+  "name": "api-rollback-dispersion-mpf",
+  "version": "1.0.0",
+  "description": "![Logo](./Macro.png) # Api Rollback Dispersion MPF",
+  "dependencies": {
+    "@apollo/server": "^4.3.3",
+    "@aws-sdk/client-lambda": "^3.272.0",
+    "@aws-sdk/client-ssm": "^3.272.0",
+    "@aws-sdk/util-utf8-node": "^3.259.0",
+    "@nestjs/axios": "^1.0.1",
+    "@nestjs/swagger": "^6.2.1",
+    "aws-serverless-express": "^3.4.0",
+    "axios": "^0.27.2",
+    "body-parser": "^1.20.0",
+    "class-validator": "^0.14.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.2",
+    "dynamoose": "^3.1.0",
+    "express": "^4.17.1",
+    "express-validator": "^6.15.0",
+    "jsonwebtoken": "^9.0.0",
+    "moment": "^2.29.4",
+    "mssql": "^8.1.2",
+    "nest-aws-sdk": "^3.0.1",
+    "serverless-http": "^2.7.0",
+    "uuid": "^8.3.2",
+    "xstate": "^4.35.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.19",
+    "serverless-offline": "^9.1.6"
+  },
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "deploy": "serverless deploy",
+    "debug": "nodemon app"
+  },
+  "keywords": [],
+  "author": "Victor Manuel Cetz Martin",
+  "license": "ISC"
+}

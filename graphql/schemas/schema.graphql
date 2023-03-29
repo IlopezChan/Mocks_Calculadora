@@ -1,0 +1,76 @@
+type Query {
+  validate(dataRequest: DataRequest): respValidar
+  phone(dataRequest: DataRequestPhone): respPhone
+  configuration(dataRequest: String): respIncode 
+}
+
+type respIncode {
+   API_KEY: String
+   CLIENT_ID: String
+  API_URL: String
+}
+
+type Mutation {
+  process(dataRequest: DataRequest): respProceso
+}
+
+type respValidar {
+  mensaje: String  
+  dataJourney: journey!
+}
+
+type respPhone {
+  phone: String  
+  dataJourney: journey!
+}
+
+type respProceso {
+  idMati: String  
+  nombre_completo: String  
+  letra_genero: String  
+  genero: String  
+  primer_nombre: String  
+  segundo_nombre: String  
+  apellido_paterno: String  
+  apellido_materno: String  
+  fecha_nacimiento: String  
+  curp: String  
+  selEstado: String  
+  selMunicipio: String  
+  selCiudad: String  
+  selEstadoDomicilio: String  
+  dataJourney: journey!
+}
+
+input DataRequest {
+  interviewId: String  
+  key: String  
+  token: String
+}
+
+input DataRequestPhone {
+    idJourney: String
+    idUser: String
+}
+
+type flowMap {
+    idState: String    
+    status: String    
+    title: String    
+    disabled: Boolean    
+    visible: Boolean
+}
+
+type journey { 
+  idJourney: String    
+  currentProcess: String    
+  currentUrl: String    
+  nextProcess: String    
+  flowMap: [flowMap]
+  message: String
+}
+
+schema {
+  query: Query  
+  mutation: Mutation
+}

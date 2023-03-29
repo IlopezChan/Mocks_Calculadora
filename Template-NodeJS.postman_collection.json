@@ -1,0 +1,72 @@
+{
+	"info": {
+		"_postman_id": "900d5be8-271e-4a7e-aa83-00cc0c6261a4",
+		"name": "Template-NodeJS",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "14454265"
+	},
+	"item": [
+		{
+			"name": "Local AWS",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"prueba 3\",\r\n    \"estatus\": 1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/api",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Publicacion AWS",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"prueba 3\",\r\n    \"estatus\": 1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://1iukjp63p8.execute-api.us-east-1.amazonaws.com/api/691d69f9-8a3a-43d8-9b44-7270de4e7c8f",
+					"protocol": "https",
+					"host": [
+						"1iukjp63p8",
+						"execute-api",
+						"us-east-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"api",
+						"691d69f9-8a3a-43d8-9b44-7270de4e7c8f"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

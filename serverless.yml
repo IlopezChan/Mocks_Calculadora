@@ -1,0 +1,45 @@
+service: API-TIENDAS-SQL
+frameworkVersion: '3'
+
+#custom:
+#tableName: 'users-table-${sls:stage}'
+
+provider:
+  name: aws
+  runtime: nodejs14.x
+  region:  us-east-1 #us-west-2
+  #stage: ${opt:stage}
+  iam:
+    role:
+      statements:
+        - Effect: Allow
+          Action:
+            - DynamoDB:* #Permisos
+          Resource:
+            #- arn:aws:dynamodb:us-east-1:642172044705:table/template-node-${opt:stage, 'dev'}
+            - arn:aws:dynamodb:us-east-1:642172044705:table/template-node-dev*
+#  environment:
+#    USERS_TABLE: ${self:custom.tableName}
+
+functions:
+  api:
+    handler: app.handler
+    events:
+      - httpApi: '*'
+
+# resources:
+#   Resources:
+#     UsersTable:
+#       Type: AWS::DynamoDB::Table
+#       Properties:
+#         BillingMode: PAY_PER_REQUEST
+#         TableName: estafeta_test
+#         AttributeDefinitions:
+#           - AttributeName: id
+#             AttributeType: S
+#         KeySchema:
+#           - AttributeName: id
+#             KeyType: HASH
+
+plugins:
+  - serverless-offline
