@@ -94,5 +94,3 @@ Para desplegar el proyecto como función lambda se deberá realizar el siguiente
 
 ## Authors
 
-- [@oscar.romero](https://github.com/fabianmacropay)
-- [@jesus.quevedo](https://github.com/macropay-devops)
